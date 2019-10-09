@@ -26,7 +26,7 @@ export default {
             type: Boolean,
             default: false
         },
-        tag: {
+        tag: {  
             type: String,
             default: "button"
         },
@@ -58,7 +58,7 @@ export default {
                 'button-input--rounded': this.rounded,
                 [`button-input--${this.category}`] : this.category,
                 'button-input--fluid' : this.fluid,
-                'button-input--loading' : this.loading
+                'button-input--loading' : this.loading,
             }
         }
     },
@@ -76,9 +76,11 @@ export default {
 
 $color: (
     "boulder": #666,
-    "dark-hot-pink": #F57C00,
+    "dark-hot-pink": #E6057C,
     "classic-pink": #F06292,
-    "classic-rose": #E60678,
+    "classic-rose": #EB3B4D,
+    "tango": #F06B18,
+    "selective-yellow": #FDDA0A,
     "white": #fff,
     "shadow-medium": blue,
 );
@@ -110,18 +112,18 @@ $color: (
     justify-content: center;
     // transition: background-color .3s background-position .3s border-color .3s;
     transition: .3s;
-    border: rem(4px) solid transparent;
+    border: rem(2px) solid transparent;
     cursor: pointer;
     padding: rem(9px);
     text-decoration: none;
     line-height: 1.13;
     font-size: rem(14px);
-    :disabled {
+    &:disabled {
         cursor: not-allowed;
         &:not(.button-input--loading) {
             border-color: map-get($color, "boulder");
             color: map-get($color, "boulder");
-            &:not(.button-input--secondary):not(.button-input--no-background) {
+            &:not(.button-input--secondary) {
                 background: map-get($color, "boulder");
                 color: map-get($color, "white");
             }
@@ -138,17 +140,17 @@ $color: (
             color: map-get($color, "white");
         }
 
-        &:focus {
+        /* &:focus {
             outline: rem(2px) solid map-get($color, "classic-rose");
             outline-offset: 0;
-        }
+        } */
 
         &.button-input--rounded {
-            box-shadow: 0 rem(2px) rem(3px) rem(2px) map-get($color, "shadow-medium");
+            box-shadow: 0 rem(2px) rem(3px) rem(2px) map-get($color, "classic-rose");
         }
     }
 
-    &--secundary {
+    &--secondary {
 
         border-color: map-get($color, "dark-hot-pink");
         background-color: transparent;
@@ -160,10 +162,10 @@ $color: (
             color: map-get($color, "white");
         }
 
-        &:focus {
+        /* &:focus {
             outline: rem(2px) solid map-get($color, "classic-rose");
             outline-offset: 0;
-        }
+        } */
 
         &.button-input--rounded {
             border-color: transparent;
@@ -193,10 +195,10 @@ $color: (
             background-position: right-center;
         }
 
-        &:focus {
+        /* &:focus {
             outline: rem(2px) solid map-get($color, "classic-rose");
             outline-offset: 0%;
-        }
+        } */
     }
 
     &--fluid {
@@ -206,8 +208,8 @@ $color: (
 
     &--rounded {
         flex-grow: 0;
-        border-radius: 100%;
-        padding: rem(50px);
+        border-radius: 50%;
+        padding: rem(11px);
     }
 
     span {

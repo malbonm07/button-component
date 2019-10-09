@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <app-button rounded>
+    <app-button disabled category="secondary">
       Button Text Input
     </app-button>
+    <button class="btn" disabled>HOLA MUNDO</button>
   </div>
 </template>
 
@@ -24,11 +25,20 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: #333;
+  background: #999;
   min-height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.btn {
+  margin-top: 50px;
+  padding: 15px;
+  &:disabled {
+    background-color: green;
+    cursor: not-allowed;
+  }
 }
 </style>
