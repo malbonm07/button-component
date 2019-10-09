@@ -74,7 +74,16 @@ export default {
 <style lang="scss">
 @import '../assets/_rem';
 
-@function get-color($color) {
+$color: (
+    "boulder": #666,
+    "dark-hot-pink": #F57C00,
+    "classic-pink": #F06292,
+    "classic-rose": #E60678,
+    "white": #fff,
+    "shadow-medium": blue,
+);
+
+/* @function map-get($color) {
     @if($color == "boulder") {
         @return #666;
     }
@@ -84,13 +93,16 @@ export default {
     @if($color == "classic-pink") {
         @return #F06292;
     }
+    @if($color == "classic-rose") {
+        @return blue;
+    }
     @if($color == "white") {
         @return #fff;
     }
-    @if($color == "shadow-medium") {
-        @return blue;
+    @else if($color == "shadow-medium") {
+        @return green;
     }
-}
+} */
 
 .button-input {
     // @include font-weight(semibold);
@@ -107,74 +119,74 @@ export default {
     :disabled {
         cursor: not-allowed;
         &:not(.button-input--loading) {
-            border-color: get-color("boulder");
-            color: get-color("boulder");
+            border-color: map-get($color, "boulder");
+            color: map-get($color, "boulder");
             &:not(.button-input--secondary):not(.button-input--no-background) {
-                background: get-color("boulder");
-                color: get-color("white");
+                background: map-get($color, "boulder");
+                color: map-get($color, "white");
             }
         }
     }
 
     &--primary {
-        background-color: get-color("dark-hot-pink");
-        color: get-color("white");
+        background-color: map-get($color, "dark-hot-pink");
+        color: map-get($color, "white");
 
         &:hover:enabled,
         &:active:enabled {
-            background-color: darken(get-color("dark-hot-pink"), 10%);
-            color: get-color("white");
+            background-color: darken(map-get($color, "dark-hot-pink"), 10%);
+            color: map-get($color, "white");
         }
 
         &:focus {
-            outline: rem(2px) solid get-color("classic-rose");
+            outline: rem(2px) solid map-get($color, "classic-rose");
             outline-offset: 0;
         }
 
         &.button-input--rounded {
-            box-shadow: 0 rem(2px) rem(3px) rem(2px) get-color("shadow-medium");
+            box-shadow: 0 rem(2px) rem(3px) rem(2px) map-get($color, "shadow-medium");
         }
     }
 
     &--secundary {
 
-        border-color: get-color("dark-hot-pink");
+        border-color: map-get($color, "dark-hot-pink");
         background-color: transparent;
-        color: get-color("dark-hot-pink");
+        color: map-get($color, "dark-hot-pink");
 
         &:hover:enabled,
         &:active:enabled {
-            background-color: darken(get-color("dark-hot-pink"), 10%);
-            color: get-color("white");
+            background-color: darken(map-get($color, "dark-hot-pink"), 10%);
+            color: map-get($color, "white");
         }
 
         &:focus {
-            outline: rem(2px) solid get-color("classic-rose");
+            outline: rem(2px) solid map-get($color, "classic-rose");
             outline-offset: 0;
         }
 
         &.button-input--rounded {
             border-color: transparent;
             background-color: transparent;
-            color: get-color("dark-hot-color");
+            color: map-get($color, "dark-hot-color");
 
             &:hover:enabled,
             &:active:enabled,
             &.button-input--loading {
-                border-color: lighten(get-color("dark-hot-pink"), 50%);
-                background-color: lighten(get-color("dark-hot-pink"), 50%);
-                color: get-color("dark-hot-pink")
+                border-color: lighten(map-get($color, "dark-hot-pink"), 50%);
+                background-color: lighten(map-get($color, "dark-hot-pink"), 50%);
+                color: map-get($color, "dark-hot-pink")
             }
         }
     }
 
     &--gradient {
         background-image: linear-gradient(to right,
-        get-color("dark-hot-pink") 0%,
-        get-color("tango") 40%, get-color("selective-yellow") 50%,
-        get-color("dark-hot-pink") 100%);
+        map-get($color, "dark-hot-pink") 0%,
+        map-get($color, "tango") 40%, map-get($color, "selective-yellow") 50%,
+        map-get($color, "dark-hot-pink") 100%);
         background-size: 200% auto;
-        color: get-color("white");
+        color: map-get($color, "white");
 
         &:hover:enabled,
         &:active:enabled {
@@ -182,7 +194,7 @@ export default {
         }
 
         &:focus {
-            outline: rem(2px) solid get-color("classic-rose");
+            outline: rem(2px) solid map-get($color, "classic-rose");
             outline-offset: 0%;
         }
     }
