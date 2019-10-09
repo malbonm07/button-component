@@ -8,7 +8,7 @@
     >
     <span>
         <slot v-if="!rounded"></slot>
-        <div id="btnSpinner" v-else></div>
+        <div id="loading" v-else></div>
     </span>
     </component>
 </template>
@@ -73,6 +73,7 @@ export default {
 
 <style lang="scss">
 @import '../assets/_rem';
+@import '../assets/_spinner';
 
 $color: (
     "boulder": #666,

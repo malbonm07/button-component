@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <app-button disabled category="secondary">
+    <app-button rounded>
       Button Text Input
     </app-button>
     <button class="btn" disabled>HOLA MUNDO</button>
