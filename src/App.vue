@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-button rounded>
-      Button Text
+      Button Text Input
     </app-button>
   </div>
 </template>

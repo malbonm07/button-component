@@ -10,7 +10,6 @@
         <slot v-if="!rounded"></slot>
         <div id="btnSpinner" v-else></div>
     </span>
-
     </component>
 </template>
 
@@ -88,6 +87,9 @@ export default {
     @if($color == "white") {
         @return #fff;
     }
+    @if($color == "shadow-medium") {
+        @return blue;
+    }
 }
 
 .button-input {
@@ -116,7 +118,7 @@ export default {
 
     &--primary {
         background-color: get-color("dark-hot-pink");
-        color: get-colot("white");
+        color: get-color("white");
 
         &:hover:enabled,
         &:active:enabled {
@@ -125,7 +127,7 @@ export default {
         }
 
         &:focus {
-            outline: rem(2px) solid get-colot("classic-rose");
+            outline: rem(2px) solid get-color("classic-rose");
             outline-offset: 0;
         }
 
@@ -138,7 +140,7 @@ export default {
 
         border-color: get-color("dark-hot-pink");
         background-color: transparent;
-        color: get-colot("dark-hot-pink");
+        color: get-color("dark-hot-pink");
 
         &:hover:enabled,
         &:active:enabled {
@@ -147,7 +149,7 @@ export default {
         }
 
         &:focus {
-            outline: rem(2px) solid get-colot("classic-rose");
+            outline: rem(2px) solid get-color("classic-rose");
             outline-offset: 0;
         }
 
@@ -193,7 +195,7 @@ export default {
     &--rounded {
         flex-grow: 0;
         border-radius: 100%;
-        padding: rem(11px);
+        padding: rem(50px);
     }
 
     span {
