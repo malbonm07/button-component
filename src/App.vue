@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <app-button rounded>
+    <app-button category="primary">
       Button Text Input
     </app-button>
-    <button class="btn" disabled>HOLA MUNDO</button>
+    <!-- <button class="btn" disabled>HOLA MUNDO</button> -->
   </div>
 </template>
 

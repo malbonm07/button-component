@@ -8,7 +8,7 @@
     >
     <span>
         <slot v-if="!rounded"></slot>
-        <div id="loading" v-else></div>
+        <span id="loading" v-show="loading"></span>
     </span>
     </component>
 </template>
@@ -58,7 +58,7 @@ export default {
                 'button-input--rounded': this.rounded,
                 [`button-input--${this.category}`] : this.category,
                 'button-input--fluid' : this.fluid,
-                'button-input--loading' : this.loading,
+                'button-input--loading' : this.loading
             }
         }
     },
@@ -214,10 +214,8 @@ $color: (
     }
 
     span {
-        display: grid;
+        display: flex;
         align-items: center;
-        grid-auto-flow: columns;
-        grid-gap: rem(0px);
     }
 
     button {
