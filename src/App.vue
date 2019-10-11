@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <app-button category="primary">
+    <app-button category="gradient" class="btn" loading>
       Button Text Input
     </app-button>
-    <!-- <button class="btn" disabled>HOLA MUNDO</button> -->
   </div>
 </template>
 
@@ -12,7 +11,7 @@
 import AppButton from "@/components/App-Button.vue"
 export default {
   name: 'app',
-  components: {
+  components: { 
     AppButton
   }
 }
@@ -32,13 +31,5 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.btn {
-  margin-top: 50px;
-  padding: 15px;
-  &:disabled {
-    background-color: green;
-    cursor: not-allowed;
-  }
 }
 </style>
